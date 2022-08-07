@@ -7,9 +7,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Android Developer Playbook',
-  tagline: 'Opinionated playbook for new Android developers',
+  tagline: 'Opinionated playbook for Android developers',
   url: 'https://anikrajc.com',
-  baseUrl: '/android-developer-playbook/',
+  baseUrl: process.env.NODE_ENV == 'development' ? '/' : '/android-developer-playbook/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -49,6 +49,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-GL8PHL5BMH'
+        },
       }),
     ],
   ],
@@ -69,7 +72,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
