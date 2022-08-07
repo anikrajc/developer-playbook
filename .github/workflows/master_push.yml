@@ -6,9 +6,9 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  # Runs on pushes on master
+  # Runs on pushes on main
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

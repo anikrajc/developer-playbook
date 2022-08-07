@@ -6,9 +6,9 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  # Runs on PR against master
+  # Runs on PR against main
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
