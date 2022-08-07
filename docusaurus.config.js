@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Android Developer Playbook',
   tagline: 'Opinionated playbook for new Android developers',
-  url: 'https://anikrajc.github.io',
-  baseUrl: '/',
+  url: 'https://anikrajc.com',
+  baseUrl: '/android-developer-playbook/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
