@@ -1,0 +1,67 @@
+site_name: Developer Playbook
+site_url: https://anikrajc.com/developer-playbook
+repo_name: developer-playbook
+site_description: 'Opinionated playbook for [Android] devs'
+site_author: anikraj1994@gmail.com
+copyright: 'Copyright &copy; 2024 Anik Raj C'
+remote_branch: docs
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - glightbox
+theme:
+  name: 'material'
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    code: 'JetBrains Mono'
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: 'pink'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: 'pink'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.expand
+    - navigation.tabs
+    - navigation.path
+    - content.tabs.link
+    - content.code.copy # For showing a copy button in code blocks.
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+
+nav:
+  - 'Home':
+      - 'Overview': index.md
