@@ -21,25 +21,30 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+
+      - uses: actions/setup-python@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Install Dependancies
-        run: npm ci
-      - name: Build
-        run: npm run build
+          python-version: 3.x
+
+      - name: Install mkdocs
+        run: pip install mkdocs-material mkdocs-glightbox
+
+      - name: Copy Root Md files to docs
+        shell: bash
+        run: |
+          cp -f CONTRIBUTING.md docs/CONTRIBUTING.md
+          cp -f README.md docs/README.md
+
+      - name: Build Docs
+        run: mkdocs build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "build/"
+          path: "site/"
 
   deploy:
     environment:
