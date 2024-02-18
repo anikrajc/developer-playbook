@@ -11,6 +11,8 @@ plugins:
   - glightbox
 theme:
   name: 'material'
+  favicon: static/img/favicon.ico
+  logo: static/img/logo_white.svg
   icon:
     repo: fontawesome/brands/github
   font:
@@ -38,6 +40,8 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.instant.preview
     - navigation.expand
     - navigation.tabs
     - navigation.path
