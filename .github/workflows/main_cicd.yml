@@ -36,7 +36,7 @@ jobs:
         shell: bash
         run: |
           cp -f CONTRIBUTING.md docs/CONTRIBUTING.md
-          cp -f README.md docs/README.md
+          cp -f README.md docs/HOME.md
 
       - name: Build Docs
         run: mkdocs build
